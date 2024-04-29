@@ -1,0 +1,32 @@
+{
+  "name": "Primodium devcontainer",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "NomicFoundation.hardhat-solidity",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "editor.formatOnSaveMode": "file",
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "forwardPorts": [8545, 3000],
+  "portsAttributes": {
+    "8545": {
+      "label": "Foundry Anvil",
+      "onAutoForward": "notify"
+    },
+    "3000": {
+      "label": "Vite Server",
+      "onAutoForward": "notify"
+    }
+  },
+  "remoteUser": "node"
+}
